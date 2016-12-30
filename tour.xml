@@ -1,0 +1,96 @@
+<krpano version="1.18" title="Panorama" onstart="startup();">
+
+	<progress showload="none" showwait="none" />	
+	
+	<include url="hs-clicked/hs-clicked.xml"/>
+	
+	<layer name="text"
+		url="plugins/textfield.swf"
+		align="lefttop" x="10" y="10"
+		keep="true"
+		html="data:text"
+		css="data:css"
+		autowidth="auto"
+		autoheight="auto"
+		selectable="false"
+		background="false"
+		border="false"
+		roundedge="0"
+		textshadow="1.0"
+		textshadowrange="7.0"
+		textshadowangle="45"
+		textshadowcolor="0x000000"
+		textshadowalpha="0.6"
+		handcursor="false"
+		/>
+		
+	<data name="text">
+		<h1>HS-Clicked plugin example</h1>
+		<h2>Scenes</h2>
+		<a href="event:loadscene(0, null, MERGE);">Vologda city, Russia</a><br/>
+		<a href="event:loadscene(1, null, MERGE);">Pacific coast, California</a><br/>
+	</data>		
+	
+	<data name="css">
+		h1 { color: #FFFFFF; font-size: 24px; font-family:Arial; text-align: left; font-weight: bold; margin-bottom: 30px; padding: 0;} 
+		h2 { color: #FFFFFF; font-size: 16px; font-family:Arial; text-align: left; font-weight: bold; margin-bottom: 10px; padding: 0;} 
+		h3 { color: #FFFFFF; font-size: 14px; font-family:Arial; text-align: left; font-weight: bold; margin: 0; padding: 0;} 
+		p  { color: #FFFFFF; font-size: 14px; font-family:Arial; text-align: left; font-weight: bold; margin: 0; padding: 0;} 
+		a  { color: #FFFFFF; font-size: 14px; font-family:Arial; text-align: left; font-weight: bold; margin: 0; padding: 0;}
+		br { font-size: 16px;} 
+	</data>	
+
+	<action name="startup">
+		set(control.mousetype, drag2D);
+		set(cursors.type, drag);	
+		if(startscene === null, copy(startscene,scene[0].name));
+		loadscene(get(startscene), null, MERGE);
+	</action>
+
+	
+	<scene name="scene_pano5516" title="pano5516" onstart="" thumburl="panos/pano5516.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/pano5516.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pano5516.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/pano5516.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<hotspot name="hs1" ath="11.0" atv="16.5" scale="0.6" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs2" ath="-22.65" atv="10.39" scale="0.5" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs3" ath="-53" atv="25" scale="0.7" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs4" ath="-123.0" atv="17" scale="0.5" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs5" ath="-179.9" atv="28.3" scale="0.5" edge="leftbottom" url="skin/hs_photo.png"/>
+
+	</scene>	
+	
+	<scene name="scene_pano4589" title="pano4589" onstart="" thumburl="panos/pano4589.tiles/thumb.jpg" lat="" lng="" heading="">
+
+		<view hlookat="0" vlookat="0" fovtype="MFOV" fov="120" maxpixelzoom="1.0" fovmin="70" fovmax="140" limitview="auto" />
+
+		<preview url="panos/pano4589.tiles/preview.jpg" />
+
+		<image>
+			<cube url="panos/pano4589.tiles/pano_%s.jpg" />
+			<mobile>
+				<cube url="panos/pano4589.tiles/mobile_%s.jpg" />
+			</mobile>
+		</image>
+
+		<hotspot name="hs1" ath="240" atv="5" scale="0.4" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs2" ath="312" atv="7" scale="0.5" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs3" ath="5" atv="23" scale="0.6" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs4" ath="213" atv="25" scale="0.7" edge="leftbottom" url="skin/hs_photo.png"/>
+		<hotspot name="hs5" ath="152" atv="33" scale="0.8" edge="leftbottom" url="skin/hs_photo.png"/>		
+
+	</scene>
+
+
+
+
+</krpano>
